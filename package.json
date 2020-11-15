@@ -1,0 +1,31 @@
+{
+  "name": "express-skeleton",
+  "version": "1.0.0",
+  "description": "Express JS MVC project skeleton",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon index.js",
+    "model:generate": "sequelize model:generate",
+    "migrate": "sequelize db:migrate",
+    "migrate:rollback": "sequelize db:migrate:undo",
+    "seed:generate": "sequelize seed:generate",
+    "seed": "sequelize db:seed:all",
+    "seed:name": "sequelize db:seed --seed",
+    "seed:rollback": "sequelize db:seed:undo:all",
+    "seed:rollback:name": "sequelize db:seed:undo --seed"
+  },
+  "author": "Adi Purnama",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mariadb": "^2.3.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.6",
+    "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}

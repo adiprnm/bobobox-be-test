@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT,
     type: DataTypes.STRING,
     value: DataTypes.FLOAT,
-    quota: DataTypes.INTEGER
+    quota: DataTypes.INTEGER,
+    is_distributed: DataTypes.BOOLEAN
   }, {});
   promo.associate = function(models) {
     // associations can be defined here

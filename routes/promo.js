@@ -17,4 +17,17 @@ router.post('/calculate', async (req, res, next) => {
     }
 })
 
+/**
+ * Distribute promo routes
+ */
+router.post('/distribute', async (req, res, next) => {
+    try {
+        const result = await promoController.distribute(req.body);
+    
+        successResponse(res, result)
+    } catch (error) {
+        next(error)
+    }
+})
+
 module.exports = router 

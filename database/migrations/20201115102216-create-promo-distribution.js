@@ -1,30 +1,24 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('promos', {
+    return queryInterface.createTable('promo_distributions', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      title: {
-        type: Sequelize.STRING
-      },
-      description: {
-        type: Sequelize.TEXT
-      },
-      type: {
-        type: Sequelize.STRING
-      },
-      value: {
-        type: Sequelize.FLOAT
-      },
-      quota: {
+      promo_id: {
         type: Sequelize.INTEGER
       },
-      is_distributed: {
-        type: Sequelize.BOOLEAN
+      date: {
+        type: Sequelize.DATE
+      },
+      available: {
+        type: Sequelize.INTEGER
+      },
+      used: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -37,6 +31,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('promos');
+    return queryInterface.dropTable('promo_distributions');
   }
 };

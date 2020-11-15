@@ -1,0 +1,9 @@
+2020-11-15T05:54:47.513Z: [98208528-1da2-49ae-a876-6b674544af70] ReferenceError: titalPrice is not defined
+    at PromoController.calculate (/home/adipurnm/Documents/Personal/Work/Bobobox/promotion-service/src/controllers/promo_controller.js:38:26)
+    at async /home/adipurnm/Documents/Personal/Work/Bobobox/promotion-service/routes/promo.js:12:24
+2020-11-15T05:56:12.180Z: [6515c1f6-9916-4bae-b835-f5217ae29088] Error
+    at PromoController.calculate (/home/adipurnm/Documents/Personal/Work/Bobobox/promotion-service/src/controllers/promo_controller.js:17:19)
+    at async /home/adipurnm/Documents/Personal/Work/Bobobox/promotion-service/routes/promo.js:12:24
+2020-11-15T05:56:31.836Z: [1abb9084-0eac-478e-8690-f4fa1b941583] Error: Promo not found!
+    at PromoController.calculate (/home/adipurnm/Documents/Personal/Work/Bobobox/promotion-service/src/controllers/promo_controller.js:17:19)
+    at async /home/adipurnm/Documents/Personal/Work/Bobobox/promotion-service/routes/promo.js:12:24

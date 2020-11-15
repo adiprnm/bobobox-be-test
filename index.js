@@ -1,19 +1,27 @@
-const express = require('express')
-const app = express()
-const port = 3000
-
 require('dotenv').config()
 
-const response = require('./src/lib/response')
+const express = require('express')
+const app = express()
+const port = process.env.APP_PORT || 3000
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const routes = require('./routes/index')
+const { handleError } = require('./lib/handler')
 
-// routes
-const userRoute = require('./routes/user')
+// register routes
+app.use(bodyParser.json({ limit: '5mb' }))
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors())
+app.use(routes)
 
-app.use('/user', userRoute)
+// register error handler
+app.use((err, req, res, next) => {
+    handleError(err, res);
+});
 
-app.get('/', (req, res) => {
-    const result = response.success("Express Skeleton server is online!")
-    res.json(result)
+// register api not found handler
+app.use((req, res, next) => {
+    errorResponse(res, "API tidak ditemukan!", 404)
 })
 
 app.listen(port, () => {

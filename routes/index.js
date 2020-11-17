@@ -4,9 +4,11 @@ const router = require('express').Router()
 
 // import routes
 const promoRoutes = require('./promo')
+const reservationRoutes = require('./reservation')
 
 // register routes
 router.use('/promo', promoRoutes)
+router.use('/reservation', reservationRoutes)
 
 
 router.get('/', (req, res) => {

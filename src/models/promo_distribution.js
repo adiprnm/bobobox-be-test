@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const promo_distribution = sequelize.define('promo_distribution', {
     promo_id: DataTypes.INTEGER,
-    date: DataTypes.DATE,
+    date: DataTypes.DATEONLY,
     available: DataTypes.INTEGER,
     used: DataTypes.INTEGER
   }, {});

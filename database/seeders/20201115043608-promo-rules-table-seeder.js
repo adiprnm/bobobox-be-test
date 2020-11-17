@@ -15,62 +15,22 @@ module.exports = {
     */
     return queryInterface.bulkInsert('promo_rules', [{
       promo_id: 1,
-      code: 'min_night',
-      value: '3',
-      createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
-      updatedAt: moment().format("YYYY-MM-DD HH:mm:ss")
-    }, {
-      promo_id: 1,
-      code: 'min_room',
-      value: '2',
-      createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
-      updatedAt: moment().format("YYYY-MM-DD HH:mm:ss")
-    }, {
-      promo_id: 1,
-      code: 'checkin_day',
-      value: 'sun, sat',
-      createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
-      updatedAt: moment().format("YYYY-MM-DD HH:mm:ss")
-    }, {
-      promo_id: 1,
-      code: 'booking_day',
-      value: 'sun, sat',
-      createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
-      updatedAt: moment().format("YYYY-MM-DD HH:mm:ss")
-    }, {
-      promo_id: 1,
-      code: 'booking_hour',
-      value: '10:00:00 - 12:00:00',
+      min_night: 3,
+      min_room: 2,
+      checkin_day: 'sat, sun',
+      booking_day: 'sat, sun',
+      booking_hour_start: '10:00:00',
+      booking_hour_end: '12:00:00',
       createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
       updatedAt: moment().format("YYYY-MM-DD HH:mm:ss")
     }, {
       promo_id: 2,
-      code: 'min_night',
-      value: '2',
-      createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
-      updatedAt: moment().format("YYYY-MM-DD HH:mm:ss")
-    }, {
-      promo_id: 2,
-      code: 'min_room',
-      value: '3',
-      createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
-      updatedAt: moment().format("YYYY-MM-DD HH:mm:ss")
-    }, {
-      promo_id: 2,
-      code: 'checkin_day',
-      value: 'sun, sat',
-      createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
-      updatedAt: moment().format("YYYY-MM-DD HH:mm:ss")
-    }, {
-      promo_id: 2,
-      code: 'booking_day',
-      value: 'sun, sat',
-      createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
-      updatedAt: moment().format("YYYY-MM-DD HH:mm:ss")
-    }, {
-      promo_id: 2,
-      code: 'booking_hour',
-      value: '13:00:00 - 16:00:00',
+      min_night: 2,
+      min_room: 3,
+      checkin_day: 'sat, sun',
+      booking_day: 'sat, sun',
+      booking_hour_start: '13:00:00',
+      booking_hour_end: '16:00:00',
       createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
       updatedAt: moment().format("YYYY-MM-DD HH:mm:ss")
     }])

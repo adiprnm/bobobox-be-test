@@ -19,6 +19,7 @@ module.exports = {
       type: 'P',
       value: 30,
       quota: 100,
+      is_distributed: false,
       createdAt: moment().format('YYYY-MM-DD HH:mm:ss'),
       updatedAt: moment().format('YYYY-MM-DD HH:mm:ss')
     }, {
@@ -27,6 +28,7 @@ module.exports = {
       type: 'C',
       value: 25000,
       quota: 70,
+      is_distributed: false,
       createdAt: moment().format('YYYY-MM-DD HH:mm:ss'),
       updatedAt: moment().format('YYYY-MM-DD HH:mm:ss')
     }])

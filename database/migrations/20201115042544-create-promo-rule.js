@@ -9,16 +9,25 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       promo_id: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
-      code: {
-        type: Sequelize.STRING
+      min_night: {
+        type: Sequelize.INTEGER
       },
-      value: {
-        type: Sequelize.STRING
+      min_room: {
+        type: Sequelize.INTEGER
       },
-      description: {
-        type: Sequelize.TEXT
+      checkin_day: {
+        type: Sequelize.STRING(50)
+      },
+      booking_day: {
+        type: Sequelize.STRING(50)
+      },
+      booking_hour_start: {
+        type: Sequelize.TIME
+      },
+      booking_hour_end: {
+        type: Sequelize.TIME
       },
       createdAt: {
         allowNull: false,

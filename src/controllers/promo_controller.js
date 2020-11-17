@@ -27,8 +27,10 @@ class PromoController
             // check promo type, P = Percentage, C = Cash
             if (promo.type == 'P') {
                 discount = room.price * promo.value / 100
-            } else {
+            } else if (promo.type == 'C') {
                 discount = promo.value
+            } else {
+                discount = 0
             }
             
             discountPrice = room.price - discount
@@ -71,7 +73,7 @@ class PromoController
             throw new HttpError(400, 'start_date cannot be greater than end_date!')
         }
 
-        let quotaPerDay = parseInt(promo.quota / (diff))
+        let quotaPerDay = parseInt(promo.quota / (diff + 1))
 
         let date
         let distributions = [{
@@ -81,7 +83,8 @@ class PromoController
             used: 0
         }]
 
-        let totalQuota = quotaPerDay * (diff)
+        let totalQuota = quotaPerDay * (diff + 1)
+        let remainingQuota = promo.quota - totalQuota
         
         for (let i = 1; i <= diff; i++) {
             date = startDate.add(1, 'days').format("YYYY-MM-DD")
@@ -89,9 +92,11 @@ class PromoController
             distributions.push({
                 promo_id: promo.id,
                 date: moment(date).format("YYYY-MM-DD"),
-                available: quotaPerDay + (i == diff ? promo.quota - totalQuota : 0),
+                available: quotaPerDay + (remainingQuota > 0 ? 1 : 0),
                 used: 0
             })
+
+            remainingQuota--
         }
 
         distributions = await PromoDistribution.bulkCreate(distributions)

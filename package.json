@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "model:generate": "sequelize model:generate",
     "migrate": "sequelize db:migrate",
     "migrate:rollback": "sequelize db:migrate:undo",
@@ -33,5 +34,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
+  },
+  "engines": {
+    "node": "12.*"
   }
 }

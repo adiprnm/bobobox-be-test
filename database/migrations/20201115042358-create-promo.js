@@ -9,13 +9,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(100)
       },
       description: {
         type: Sequelize.TEXT
       },
       type: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(2)
       },
       value: {
         type: Sequelize.FLOAT

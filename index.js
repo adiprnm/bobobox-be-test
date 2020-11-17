@@ -7,6 +7,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const routes = require('./routes/index')
 const { handleError } = require('./lib/handler')
+const { errorResponse } = require('./lib/response')
 
 // register routes
 app.use(bodyParser.json({ limit: '5mb' }))
